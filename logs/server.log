@@ -3,35 +3,32 @@
 > vite
 
 
-  VITE v5.4.20  ready in 707 ms
+  VITE v5.4.20  ready in 423 ms
 
   ➜  Local:   http://localhost:3000/
   ➜  Network: http://172.20.47.192:3000/
-10:45:41 AM [vite] Pre-transform error: Transform failed with 1 error:
+10:49:35 AM [vite] Pre-transform error: Transform failed with 1 error:
 /home/workspace/src/App.jsx:164:92: ERROR: Unexpected "]"
-Error:   Failed to scan for dependencies from entries:
-  /home/workspace/src/App.jsx
-/home/workspace/src/Test.jsx
-/home/workspace/src/main.jsx
-/home/workspace/src/components/DocumentSection.jsx
-/home/workspace/src/components/Footer.jsx
-/home/workspace/src/components/HeaderHero.jsx
-/home/workspace/src/components/TableOfContents.jsx
-
-  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mUnexpected "]"[0m
-
-    src/App.jsx:164:92:
-[37m      164 │ ...e, description, priority, tags[[32m][37m, due_date, status, created_at...
-          ╵                                   [32m^[0m
-
-
-    at failureErrorWithLog (/home/workspace/node_modules/esbuild/lib/main.js:1472:15)
-    at /home/workspace/node_modules/esbuild/lib/main.js:945:25
-    at runOnEndCallbacks (/home/workspace/node_modules/esbuild/lib/main.js:1315:45)
-    at buildResponseToResult (/home/workspace/node_modules/esbuild/lib/main.js:943:7)
-    at /home/workspace/node_modules/esbuild/lib/main.js:955:9
-    at new Promise (<anonymous>)
-    at requestCallbacks.on-end (/home/workspace/node_modules/esbuild/lib/main.js:954:54)
-    at handleRequest (/home/workspace/node_modules/esbuild/lib/main.js:647:17)
-    at handleIncomingPacket (/home/workspace/node_modules/esbuild/lib/main.js:672:7)
-    at Socket.readFromStdout (/home/workspace/node_modules/esbuild/lib/main.js:600:7)
+10:49:55 AM [vite] Internal server error: Transform failed with 1 error:
+/home/workspace/src/App.jsx:164:92: ERROR: Unexpected "]"
+  Plugin: vite:esbuild
+  File: /home/workspace/src/App.jsx:164:92
+  
+  Unexpected "]"
+  162|                <ul>
+  163|                  <li><strong>User</strong> { id, email, name, timezone, locale, work_hours, prefs, created_at }</li>
+  164|                  <li><strong>Goal</strong> { id, user_id, title, description, priority, tags[], due_date, status, created_at }</li>
+     |                                                                                              ^
+  165|                  <li><strong>Plan</strong> { id, goal_id, summary, total_hours, risk_notes, version, created_at }</li>
+  166|                  <li><strong>Phase</strong> { id, plan_id, name, outcome, order, estimate_hours }</li>
+  
+      at failureErrorWithLog (/home/workspace/node_modules/esbuild/lib/main.js:1472:15)
+      at /home/workspace/node_modules/esbuild/lib/main.js:755:50
+      at responseCallbacks.<computed> (/home/workspace/node_modules/esbuild/lib/main.js:622:9)
+      at handleIncomingPacket (/home/workspace/node_modules/esbuild/lib/main.js:677:12)
+      at Socket.readFromStdout (/home/workspace/node_modules/esbuild/lib/main.js:600:7)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5)
+      at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
